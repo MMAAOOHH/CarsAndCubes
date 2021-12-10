@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Destructible : MonoBehaviour
+public class DestructibleCube : MonoBehaviour
 {
     [SerializeField] private GameObject solid;
     [SerializeField] private GameObject fractured;

@@ -6,15 +6,16 @@ public class CubeSpawner : MonoBehaviour
 {
     [SerializeField] private float _spawnRadius;
     [SerializeField] private float _spawnRate;
+    [SerializeField] private GameObject _prefab;
     
     [SerializeField] private LayerMask _collisionLayerToIgnore;
 
-    private ObjectPool _objectPool;
+    // private ObjectPool _objectPool;
 
-    private void Awake()
-    {
-        _objectPool = FindObjectOfType<ObjectPool>();
-    }
+    // private void Awake()
+    // {
+    //     _objectPool = FindObjectOfType<ObjectPool>();
+    // }
 
     private void Start()
     {
@@ -30,9 +31,8 @@ public class CubeSpawner : MonoBehaviour
             spawnPosition = new Vector3(position.x, 0, position.y);
             
         } while (IsBlockedPosition(spawnPosition));
-
-        GameObject newObject = _objectPool.Get();
-        newObject.transform.position = spawnPosition;
+        
+        Instantiate(_prefab, spawnPosition, Quaternion.identity);
     }
 
     private Vector3 GetRandomPosition()
