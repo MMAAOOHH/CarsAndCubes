@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private InputManager _inputManager;
-    [SerializeField] private GameObject shop;
+    [SerializeField] private GameObject _inventory;
     
     private void Start()
     {
@@ -15,16 +15,16 @@ public class GameManager : MonoBehaviour
     {
         if (!_inputManager.TabKeyPressed)
             return;
-        ShopDisplay();
+        DisplayInventory();
         
         if (!_inputManager.EscapeKeyPressed)
             return;
         Exit();
     }
     
-    private void ShopDisplay()
+    private void DisplayInventory()
     {
-        shop.SetActive(!shop.activeInHierarchy);
+        _inventory.SetActive(!_inventory.activeInHierarchy);
     }
     
     private void Exit()

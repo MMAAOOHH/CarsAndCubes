@@ -2,7 +2,7 @@ using Assets.QuickOutline.Scripts;
 using UnityEngine;
 
 [RequireComponent(typeof (Rigidbody))]
-public class Car : Interactable, IInteractable 
+public class Car : MonoBehaviour, IInteractable 
 {
     private InputManager _inputManager;
     private Rigidbody _rigidbody;

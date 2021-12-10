@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Shard : Interactable, IInteractable
+public class Shard : MonoBehaviour, IInteractable
 {
     private int _value = 1;
     
