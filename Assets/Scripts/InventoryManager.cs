@@ -2,22 +2,22 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : Singleton<Inventory>
+public class InventoryManager : Singleton<InventoryManager>
 {
-    [SerializeField] private List<Item> _inventory;
+    [SerializeField] private List<Item> _items;
 
     private void Start()
     {
-        _inventory = new List<Item>();
+        _items = new List<Item>();
     }
 
     public void Add(Item item)
     {
-        _inventory.Add(item);
+        _items.Add(item);
     }
 
     private void Remove(Item item)
     {
-        _inventory.Remove(item);
+        _items.Remove(item);
     }
 }

@@ -28,7 +28,9 @@ public class Car : MonoBehaviour, IInteractable
 
     private void Update()
     {
-        if (_hasPlayer && _inputManager.ActionKeyPressed)
+        if (!_hasPlayer)
+            return;
+        if (_inputManager.ActionKeyPressed)
             Exit();
     }
 
