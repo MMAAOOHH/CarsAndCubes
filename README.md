@@ -16,5 +16,8 @@ Patterns:
   In `class Inventory` as `OnItemChanged`, in `Add();`
   Callback gets invoked when a new item is added to the inventory, `class InventoryUI` listens and calls `UpdateInventoryUi`
   
+  (also tried creating `class IObserver` and `class IObservable` but had a hard time figuring out how to really use them.
+  
+  
 - Object Pool
-  As `class ObjectPool` - planned to be used while spawning new cubes but not implemented.
+  As `class ObjectPool` - planned to be used while spawning new cubes but not implemented. Planned to be used with spawning items instead.
