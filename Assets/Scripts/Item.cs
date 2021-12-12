@@ -8,13 +8,13 @@ public class Item : MonoBehaviour, IInteractable
     
     private string _name;
     private string _description;
-    private int _id;
+    private int _amount;
     
-    private InventoryManager _inventoryManager;
+    private Inventory _inventory;
 
     private void Start()
     {
-        _inventoryManager = InventoryManager.Instance;
+        _inventory = Inventory.Instance;
         SetModel();
     }
 
@@ -26,7 +26,7 @@ public class Item : MonoBehaviour, IInteractable
     
     public void Interact()
     {
-        _inventoryManager.Add(this);
+        _inventory.Add(this);
         gameObject.SetActive(false);
     }
 }
