@@ -1,23 +1,26 @@
-using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Inventory : Singleton<Inventory>
 {
-    [SerializeField] private List<Item> _itemList;
+    private List<Item> _itemList = new List<Item>();
+
+    public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallback;
     
     public void Add(Item item)
     {
         _itemList.Add(item);
+        onItemChangedCallback?.Invoke();
     }
 
     private void Remove(Item item)
     {
         _itemList.Remove(item);
+        onItemChangedCallback?.Invoke();
     }
     
     public List<Item> GetItems()
     {
-        return _itemList;
+        return _itemList; 
     }
 }
