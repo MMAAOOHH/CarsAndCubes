@@ -1,4 +1,3 @@
-using Assets.QuickOutline.Scripts;
 using UnityEngine;
 
 [RequireComponent(typeof (Rigidbody))]
@@ -7,7 +6,6 @@ public class Car : MonoBehaviour, IInteractable
     private InputManager _inputManager;
     private Rigidbody _rigidbody;
     private GameObject _driver;
-    private QuickOutline _outline;
     
     private bool _hasPlayer;
     
@@ -18,7 +16,6 @@ public class Car : MonoBehaviour, IInteractable
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
-        _outline = GetComponent<QuickOutline>();
     }
     private void Start()
     {
@@ -47,7 +44,6 @@ public class Car : MonoBehaviour, IInteractable
 
     public void Highlight()
     {
-        _outline.enabled = !_outline.enabled;
     }
     
     private void Enter(GameObject driver)
@@ -56,8 +52,6 @@ public class Car : MonoBehaviour, IInteractable
         _driver.transform.parent = transform;
         _driver.SetActive(false);
         _hasPlayer = true;
-        
-        _outline.enabled = false;
     }
     
     private void Exit()
